@@ -15,6 +15,12 @@ tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 base_model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint, device_map='auto', torch_dtype=torch.float32)
 
 def llm_pipeline():
+        """
+    Create a Language Model (LLM) pipeline for text generation.
+
+    Returns:
+        HuggingFacePipeline: A HuggingFace LLM pipeline for text generation.
+    """
     pipe = pipeline(
         'text2text-generation',
         model = base_model,
@@ -29,6 +35,12 @@ def llm_pipeline():
 
 
 def qa_llm():
+        """
+    Create a Question-Answering (QA) Language Model (LLM) pipeline.
+
+    Returns:
+        RetrievalQA: A RetrievalQA pipeline for question-answering.
+    """
     llm = llm_pipeline()
     embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
     db = Chroma(persist_directory="cv_db", embedding_function=embeddings)#, client_settings=CHROMA_SETTINGS)
@@ -37,6 +49,15 @@ def qa_llm():
     return qa
 
 def load_responses(file_path):
+        """
+    Load responses from a text file and extract them.
+
+    Args:
+        file_path (str): The path to the text file containing responses.
+
+    Returns:
+        list: A list of response strings.
+    """
     responses = []
     with open(file_path, "r") as file:
         for line in file:
@@ -48,11 +69,29 @@ def load_responses(file_path):
 max_sequence_length = 512
 
 def truncate_text(text):
+        """
+    Truncate text to a maximum sequence length.
+
+    Args:
+        text (str): The input text.
+
+    Returns:
+        str: The truncated text.
+    """
     if len(text) > max_sequence_length:
         text = text[:max_sequence_length]
     return text
 
 def process_answer(responses):
+        """
+    Process responses using the QA Language Model (LLM) pipeline.
+
+    Args:
+        responses (list): A list of response strings.
+
+    Returns:
+        list: A list of generated answers.
+    """
     qa = qa_llm()
     results = []
 
