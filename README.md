@@ -48,10 +48,12 @@ Follow these steps to set up and run the project on your local machine:
 5. Run python ingest_jd_cv.py - It will create the embeddings for JD and CV and will store in locally. 
 
 6. Write generalized prompts (prompt_jd.py) - to query a job description
+   ![Prompts](https://github.com/Amit2416/Langchain_CV_Experiment/blob/main/Prompts.JPG)
 
-7. Run python summarization_jd.py - It will generate reponses for the prompts. These responses will be used to query a CV.
 
-8. Run python summarization_cv.py - It will generate responses after being queried by job description sections as from Step 7.
+8. Run python summarization_jd.py - It will generate reponses for the prompts. These responses will be used to query a CV.
+
+9. Run python summarization_cv.py - It will generate responses after being queried by job description sections as from Step 7.
 
 
 
