@@ -1,0 +1,10 @@
+Instruction 1: What specific domain knowledge is required for this role? Write in points.
+Response: The specific domain knowledge required for this role is a Master's degree in Linguistics, Computational Linguistics, or related field.
+Instruction 2: How many years of experience are preferred for this role? Write in points.
+Response: The provided context does not provide information about the preferred years of experience for this role.
+Instruction 3: What are the key skills and qualifications we are looking for in a candidate? Write in points.
+Response: The key skills and qualifications we are looking for in a candidate are: - Master's degree in Linguistics, Computational Linguistics, or related field - Prior experience in developing NLP models and systems - Excellent problem-solving and analytical skills - Strong programming skills in Python - Experience with NLP libraries such as NLTK, SpaCy, or CoreNLP - Proficient in machine learning techniques and algorithms - Knowledge of statistical analysis and data mining - Ability to develop and deploy data-driven models and algorithms - Ability to work collaboratively with
+Instruction 4: What level of education is expected for candidates applying to this position? Write in points.
+Response: The expected level of education for candidates applying to this position is a Bachelor's degree in Computer Science, Engineering, or related field.
+Instruction 5: What are the main responsibilities and tasks that the candidate will be expected to handle in this role? Write in points.
+Response: The candidate will be expected to develop and implement natural language processing algorithms and models, design and build machine learning systems for language understanding and applications, utilize their expertise in statistics, programming, and machine learning techniques, and have knowledge of statistical analysis and data mining. They will also be responsible for ensuring that the models are scalable, efficient, and maintainable.
