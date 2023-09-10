@@ -52,8 +52,10 @@ Follow these steps to set up and run the project on your local machine:
 
 
 8. Run python summarization_jd.py - It will generate reponses for the prompts. These responses will be used to query a CV.
+   ![Responses from JD](https://github.com/Amit2416/Langchain_CV_Experiment/blob/main/Responses_from_JD.JPG)
 
-9. Run python summarization_cv.py - It will generate responses after being queried by job description sections as from Step 7.
+10. Run python summarization_cv.py - It will generate responses after being queried by job description sections as from Step 7.
+    ![Responses from CV](https://github.com/Amit2416/Langchain_CV_Experiment/blob/main/Responses_from_CV.JPG)
 
 
 
