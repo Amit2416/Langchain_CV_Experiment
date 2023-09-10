@@ -14,6 +14,16 @@ cv_persist_directory = "cv_db"
 job_description_persist_directory = "job_description_db"
 
 def process_documents(input_directory, persist_directory):
+        """
+    Process documents in the input directory and store them in the persist directory.
+
+    Args:
+        input_directory (str): The directory containing the input documents (PDFs).
+        persist_directory (str): The directory where processed data will be stored.
+
+    Returns:
+        None
+    """
     for file in os.listdir(input_directory):
         if file.endswith(".pdf"):
             print(f"Processing {os.path.join(input_directory, file)}")
@@ -27,6 +37,17 @@ def process_documents(input_directory, persist_directory):
             db = None
 
 def main():
+        """
+    Main function to process CVs and Job Descriptions.
+
+    Calls the process_documents function for both CVs and Job Descriptions.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
     # Process CVs
     process_documents(cv_directory, cv_persist_directory)
 
