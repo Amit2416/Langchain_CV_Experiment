@@ -15,6 +15,12 @@ tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 base_model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint, device_map='auto', torch_dtype=torch.float32)
 
 def llm_pipeline():
+        """
+    Create a Language Model (LLM) pipeline for text generation.
+
+    Returns:
+        HuggingFacePipeline: A HuggingFace LLM pipeline for text generation.
+    """
     pipe = pipeline(
         'text2text-generation',
         model = base_model,
@@ -29,6 +35,12 @@ def llm_pipeline():
 
 
 def qa_llm():
+        """
+    Create a Question-Answering (QA) Language Model (LLM) pipeline.
+
+    Returns:
+        RetrievalQA: A RetrievalQA pipeline for question-answering.
+    """
     llm = llm_pipeline()
     embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
     db = Chroma(persist_directory="job_description_db", embedding_function=embeddings)#, client_settings=CHROMA_SETTINGS)
@@ -37,6 +49,15 @@ def qa_llm():
     return qa
 
 def process_answer(instruction):
+        """
+    Generate a response to a given instruction using the QA Language Model (LLM) pipeline.
+
+    Args:
+        instruction (str): The instruction or question for which a response is generated.
+
+    Returns:
+        str: The generated response.
+    """
     instruction = instruction
     qa = qa_llm()
     generated_text = qa(instruction)
